@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nvM-gV-7ay">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nvM-gV-7ay">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,7 +15,7 @@
             <objects>
                 <navigationController id="nvM-gV-7ay" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="zbx-bM-tPz">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="Texas Rose"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -27,33 +28,103 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="e4F-fj-jbo" kind="relationship" relationship="rootViewController" id="Uy6-9M-ZgF"/>
+                        <segue destination="NwM-14-utB" kind="relationship" relationship="rootViewController" id="ori-9c-60R"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="emt-ur-CfA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1146" y="-213"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="dr0-jd-jhA">
+        <!--Home View Controller-->
+        <scene sceneID="AP5-7D-Njs">
             <objects>
-                <viewController id="e4F-fj-jbo" customClass="ViewController" customModule="LearningTask_7_3" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mg2-b3-0wp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                <collectionViewController id="NwM-14-utB" customClass="HomeViewController" customModule="LearningTask_7_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="7sz-zb-Qgp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="804"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Y4M-B0-Ufa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Cs0-5I-Ubm"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AO5-2e-hmZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="24" minimumInteritemSpacing="20" id="pwX-04-8eu">
+                            <size key="itemSize" width="180" height="302"/>
+                            <size key="headerReferenceSize" width="0.0" height="48"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LivroHomeViewCell" id="8M5-dS-7oD" customClass="LivroHomeViewCell" customModule="LearningTask_7_3" customModuleProvider="target">
+                                <rect key="frame" x="117" y="68" width="180" height="302"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" insetsLayoutMarginsFromSafeArea="NO" id="nkc-XH-Mi5">
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="302"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wVJ-mv-Dee" userLabel="Container Stack View">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="302"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="966-be-omO" userLabel="Livro Image View">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="254"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="966-be-omO" secondAttribute="height" multiplier="1:1.41" id="kT9-bq-whQ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="&lt;definido-pelo-titulo-do-livro&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kkx-9v-nQt" userLabel="Titulo Livro Label">
+                                                    <rect key="frame" x="0.0" y="254" width="180" height="48"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="wVJ-mv-Dee" secondAttribute="bottom" id="K3M-UU-3Nj"/>
+                                        <constraint firstItem="wVJ-mv-Dee" firstAttribute="top" secondItem="nkc-XH-Mi5" secondAttribute="top" id="L5I-tV-W6O"/>
+                                        <constraint firstAttribute="trailing" secondItem="wVJ-mv-Dee" secondAttribute="trailing" id="PTd-oa-35T"/>
+                                        <constraint firstItem="wVJ-mv-Dee" firstAttribute="leading" secondItem="nkc-XH-Mi5" secondAttribute="leading" id="gj9-14-jYz"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="180" height="302"/>
+                                <connections>
+                                    <outlet property="livroImageView" destination="966-be-omO" id="OEC-7P-FfL"/>
+                                    <outlet property="tituloLivroLabel" destination="Kkx-9v-nQt" id="aB9-L1-KaG"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.75" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HomeSectionHeaderView" id="P0X-ON-P4V" customClass="HomeSectionHeaderView" customModule="LearningTask_7_3" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todos os Livros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfQ-tL-iwJ">
+                                    <rect key="frame" x="28" y="10.5" width="358" height="21.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" name="Texas Rose"/>
+                            <constraints>
+                                <constraint firstAttribute="trailingMargin" secondItem="hfQ-tL-iwJ" secondAttribute="trailing" constant="20" id="CUi-ME-PLo"/>
+                                <constraint firstAttribute="bottomMargin" secondItem="hfQ-tL-iwJ" secondAttribute="bottom" constant="8" id="TQp-pN-pEy"/>
+                                <constraint firstItem="hfQ-tL-iwJ" firstAttribute="leading" secondItem="P0X-ON-P4V" secondAttribute="leadingMargin" constant="20" id="wNX-hz-VMY"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="tituloLabel" destination="hfQ-tL-iwJ" id="hzs-DB-byW"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="NwM-14-utB" id="fAl-SE-Hhf"/>
+                            <outlet property="delegate" destination="NwM-14-utB" id="8QI-0d-RgS"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="UCw-Og-STc"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bn6-bZ-NqX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-255" y="-74"/>
+            <point key="canvasLocation" x="-314.49275362318843" y="-214.28571428571428"/>
         </scene>
     </scenes>
     <resources>
         <namedColor name="Texas Rose">
-            <color red="1" green="0.66666666666666663" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.66699999570846558" blue="0.37599998712539673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
