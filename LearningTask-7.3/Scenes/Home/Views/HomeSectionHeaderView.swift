@@ -13,7 +13,6 @@ class HomeSectionHeaderView: UICollectionReusableView {
     
     var titulo: String? {
         didSet {
-            guard let titulo = titulo else { return }
             tituloLabel.text = titulo
         }
     }

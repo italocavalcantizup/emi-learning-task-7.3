@@ -72,6 +72,8 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         }
 
         let itemsPerLine: CGFloat = 2
+        let labelHeight: CGFloat = 48
+        
         let margins = flowLayout.sectionInset
         let itemsSpacing = flowLayout.minimumInteritemSpacing
 
@@ -79,7 +81,8 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
                         - (margins.left + margins.right)
                         - itemsSpacing * (itemsPerLine - 1)
         let itemWidth = utilWidth / itemsPerLine
+        let itemHeight = itemWidth * 1.41 + labelHeight
 
-        return CGSize(width: itemWidth, height: itemWidth * 1.41 + 48)
+        return CGSize(width: itemWidth, height: itemHeight)
     }
 }

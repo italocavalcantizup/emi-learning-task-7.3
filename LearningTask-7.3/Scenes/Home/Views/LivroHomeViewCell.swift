@@ -24,13 +24,5 @@ class LivroHomeViewCell: UICollectionViewCell {
             tituloLivroLabel.text = data.titulo
         }
     }
-    
-    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-        let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
-        layoutAttributes.frame.size.height = size.height
 
-        setNeedsLayout()
-        return layoutAttributes
-    }
-    
 }
